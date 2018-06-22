@@ -157,5 +157,63 @@ else
 end
 end
 
+def full?
+  @board.all? {|spots| spots == "X" || spots == "O"}
+  end
+  
+def draw?
+  if full? && won? == false
+    return true 
+  else
+    return false
+  end
+end
 
+def over?
+  if won? || draw? || full?
+    return true
+  else
+    return false
+  end
+end
+
+def winner
+if won? == false
+  return nil
+else
+numbers = won?(board)
+
+first = numbers[0]
+second = numbers[1]
+third = numbers[2]
+
+win_1 = board[first]
+win_2 = board[second]
+win_3 = board[third]
+
+case
+when
+  won?(board) && win_1 == "X" && win_2 == "X" && win_3 == "X"
+  return "X"
+when
+  won?(board) && win_1 == "O" && win_2 == "O" && win_3 == "O"
+  return "O"
+when
+ !won?(board)
+ return nil
+end
+end
+end
+
+def play(board)
+  until over?(board)
+  turn(board)
+end
+ if draw?(board)
+  end
+      puts "Cat's Game!"
+  if won?(board)
+end  
+    puts "Congratulations #{winner(board)}!"
+  end
 end
