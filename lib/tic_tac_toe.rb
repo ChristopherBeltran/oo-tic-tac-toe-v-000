@@ -56,7 +56,7 @@ end
   if index.between?(0, 8) == false || valid_move?(index) == false
     turn   
   else
-      move(index, token = "X")
+      move(index, current_player)
       display_board
       
     end
