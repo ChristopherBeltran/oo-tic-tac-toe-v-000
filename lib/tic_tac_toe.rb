@@ -181,39 +181,39 @@ def winner
 if won? == false
   return nil
 else
-numbers = won?(board)
+numbers = won?
 
 first = numbers[0]
 second = numbers[1]
 third = numbers[2]
 
-win_1 = board[first]
-win_2 = board[second]
-win_3 = board[third]
+win_1 = @board[first]
+win_2 = @board[second]
+win_3 = @board[third]
 
 case
 when
-  won?(board) && win_1 == "X" && win_2 == "X" && win_3 == "X"
+  won? && win_1 == "X" && win_2 == "X" && win_3 == "X"
   return "X"
 when
-  won?(board) && win_1 == "O" && win_2 == "O" && win_3 == "O"
+  won? && win_1 == "O" && win_2 == "O" && win_3 == "O"
   return "O"
 when
- !won?(board)
+ !won?
  return nil
 end
 end
 end
 
-def play(board)
-  until over?(board)
-  turn(board)
+def play
+  until over?
+  turn
 end
- if draw?(board)
+ if draw?
   end
       puts "Cat's Game!"
-  if won?(board)
+  if won?
 end  
-    puts "Congratulations #{winner(board)}!"
+    puts "Congratulations #{winner}!"
   end
 end
