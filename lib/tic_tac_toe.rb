@@ -80,3 +80,4 @@ def current_player
     return "O"
   end
 end
+end
